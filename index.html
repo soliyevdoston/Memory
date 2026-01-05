@@ -7,7 +7,59 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div></div>
+    <main class="main">
+      <!-- Main -->
+      <section class="page main-page">
+        <div class="container">
+          <h2>Memory</h2>
+          <div class="setting">
+            <div class="option first">
+              <p class="select-itom">Select Theme</p>
+              <div class="buttons" data-group="theme">
+                <button class="option-btn active">Numbers</button>
+                <button class="option-btn">Icons</button>
+              </div>
+            </div>
+            <div class="option">
+              <p class="select-itom">Number of Players</p>
+              <div class="buttons" data-group="players">
+                <button class="option-btn active">1</button>
+                <button class="option-btn">2</button>
+                <button class="option-btn">3</button>
+                <button class="option-btn">4</button>
+              </div>
+            </div>
+            <div class="option">
+              <p class="select-itom">Grid Size</p>
+              <div class="buttons" data-group="grid">
+                <button class="option-btn active">4 x 4</button>
+                <button class="option-btn">6 x 4</button>
+                <button class="option-btn">6 x 6</button>
+              </div>
+            </div>
+            <button class="start-btn">Start Game</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game -->
+
+      <section class="page game-page hidden">
+        <div>
+          <header class="header-gme">
+            <img src="./img/memory.svg" alt="" />
+            <div>
+              <a href="#"><button class="btn-res">Restart</button></a>
+              <a href="index.html"><button class="btn-new">New Game</button></a>
+            </div>
+          </header>
+          <div class="grid container"></div>
+          <div class=""></div>
+        </div>
+        <div class="player-count"></div>
+      </section>
+    </main>
+
     <script src="app.js"></script>
   </body>
 </html>

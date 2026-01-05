@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.main-page {
+  background-color: #152938;
+}
+
+.game-page {
+  background-color: #f2f2f2;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 654px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #fcfcfc;
+  font-size: 40px;
+  text-align: center;
+  margin: 54px 0 78px;
+}
+
+.setting {
+  background-color: #fcfcfc;
+  border-radius: 20px;
+  padding-bottom: 56px;
+}
+
+.select-itom {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7191a5;
+  margin-bottom: 16px;
+}
+
+.option {
+  margin-left: 56px;
+  margin-bottom: 32px;
+}
+
+.option.first {
+  padding-top: 56px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.option-btn {
+  height: 52px;
+  background-color: #bcced9;
+  color: #fcfcfc;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.option-btn:hover {
+  background-color: #6395b8;
+}
+.option-btn.active {
+  background-color: #304859;
+}
+
+.buttons[data-group="theme"] .option-btn {
+  width: 256px;
+}
+
+.buttons[data-group="players"] .option-btn {
+  width: 119px;
+}
+
+.buttons[data-group="grid"] .option-btn {
+  width: 164px;
+}
+
+.start-btn {
+  display: block;
+  width: calc(100% - 112px);
+  margin: 0 auto;
+  height: 60px;
+  background-color: #fda214;
+  color: #fcfcfc;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.start-btn:hover {
+  background-color: #ffb84a;
+}
+
+/* Game Page */
+
+.header-gme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  width: 100%;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+
+.btn-res,
+.btn-new {
+  border: none;
+  border-radius: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-res {
+  width: 127px;
+  height: 52px;
+  font-size: 20px;
+  color: #fcfcfc;
+  background-color: #fda214;
+}
+.btn-res:hover {
+  background-color: #ffb84a;
+}
+
+.btn-new {
+  width: 149px;
+  height: 52px;
+  font-size: 20px;
+  color: #304859;
+  background-color: #dfe7ec;
+}
+.btn-new:hover {
+  background-color: #6395b8;
+}
+.grid {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto 0;
+  display: grid;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.grid-cell {
+  background-color: #304859;
+  width: 82px;
+  height: 82px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cell::after {
+  content: attr(data-value);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+}
+.grid-cell.open::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.grid-cell.open {
+  background-color: #bcced9;
+}
+
+.grid.icons .grid-cell::after {
+  content: "";
+}
+
+.grid.icons .grid-cell.open::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  background-image: var(--icon);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
