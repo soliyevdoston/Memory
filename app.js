@@ -11,7 +11,7 @@ let gameState = {
   isProcessing: false,
 };
 
-// 1. Tugmalarni bosish
+//  Tugmalarni bosish
 document.querySelectorAll(".buttons").forEach((group) => {
   group.addEventListener("click", (e) => {
     if (e.target.classList.contains("option-btn")) {
@@ -21,7 +21,7 @@ document.querySelectorAll(".buttons").forEach((group) => {
   });
 });
 
-// 2. O'yinni boshlash
+//  O'yinni boshlash
 const startBtn = document.querySelector(".start-btn");
 startBtn.onclick = function () {
   config.theme = document.querySelector(
