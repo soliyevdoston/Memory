@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="main">
-      <!-- Main -->
+      <!-- Bosh sahifa (Sozlamalar) - O'zgartirilmadi -->
       <section class="page main-page">
         <div class="container">
           <h2>Memory</h2>
@@ -33,7 +33,7 @@
               <p class="select-itom">Grid Size</p>
               <div class="buttons" data-group="grid">
                 <button class="option-btn active">4 x 4</button>
-                <button class="option-btn">6 x 4</button>
+                <button class="option-btn">4 x 6</button>
                 <button class="option-btn">6 x 6</button>
               </div>
             </div>
@@ -42,22 +42,53 @@
         </div>
       </section>
 
-      <!-- Game -->
+      <!-- O'yin qismi -->
+      <div class="game-list hidden">
+        <header class="header-gme">
+          <h2 style="color: #152938; margin: 0">memory</h2>
+          <div>
+            <button class="btn-res" onclick="restartGame()">Restart</button>
+            <button class="btn-new" onclick="location.reload()">
+              New Game
+            </button>
+          </div>
+        </header>
+        <section class="game-page">
+          <div class="grid-container">
+            <div class="grid"></div>
+          </div>
 
-      <section class="page game-page hidden">
-        <div>
-          <header class="header-gme">
-            <img src="./img/memory.svg" alt="" />
-            <div>
-              <a href="#"><button class="btn-res">Restart</button></a>
-              <a href="index.html"><button class="btn-new">New Game</button></a>
+          <!-- 1 kishi uchun time va move -->
+          <div class="player-one-stats hidden">
+            <div class="stat-box">
+              <span class="label">Time</span>
+              <span class="value" id="timer">0:00</span>
             </div>
-          </header>
-          <div class="grid container"></div>
-          <div class=""></div>
+            <div class="stat-box">
+              <span class="label">Moves</span>
+              <span class="value" id="moves">0</span>
+            </div>
+          </div>
+
+          <!-- Ko'p o'yinchilar uchun ochkolar -->
+          <div class="multi-player-stats hidden"></div>
+        </section>
+      </div>
+
+      <!-- Natija  -->
+      <div id="modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <h1 id="winner-text">Player 3 Wins!</h1>
+          <p>Game over! Here are the results...</p>
+          <div id="results-list"></div>
+          <div class="modal-btns">
+            <button class="btn-res" onclick="restartGame()">Restart</button>
+            <button class="btn-new" onclick="location.reload()">
+              Setup New Game
+            </button>
+          </div>
         </div>
-        <div class="player-count"></div>
-      </section>
+      </div>
     </main>
 
     <script src="app.js"></script>

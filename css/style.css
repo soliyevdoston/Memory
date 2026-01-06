@@ -5,217 +5,271 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: "Atkinson Hyperlegible", sans-serif;
   background-color: #ffffff;
-  height: 100%;
 }
 
+.hidden {
+  display: none !important;
+}
 .main {
   min-height: 100vh;
   position: relative;
 }
-
 .page {
-  min-height: 100vh;
   width: 100%;
-  position: absolute;
-  inset: 0;
 }
-
 .main-page {
   background-color: #152938;
+  height: 100vh;
 }
-
-.game-page {
-  background-color: #f2f2f2;
-  display: none;
-}
-
-.hidden {
-  display: none;
-}
-
 .container {
   width: 654px;
   margin: 0 auto;
 }
-
 h2 {
   color: #fcfcfc;
   font-size: 40px;
   text-align: center;
-  margin: 54px 0 78px;
+
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
+/* Sozlamalar menyusi */
 .setting {
   background-color: #fcfcfc;
   border-radius: 20px;
-  padding-bottom: 56px;
+  padding: 40px;
 }
-
+.option {
+  margin-bottom: 25px;
+}
 .select-itom {
   font-size: 20px;
   font-weight: bold;
   color: #7191a5;
-  margin-bottom: 16px;
 }
-
-.option {
-  margin-left: 56px;
-  margin-bottom: 32px;
-}
-
-.option.first {
-  padding-top: 56px;
-}
-
 .buttons {
   display: flex;
-  gap: 16px;
+  gap: 15px;
+  padding-top: 16px;
+  padding-bottom: 5px;
 }
-
 .option-btn {
+  flex: 1;
   height: 52px;
-  background-color: #bcced9;
-  color: #fcfcfc;
+  background: #bcced9;
+  color: #fff;
   font-size: 26px;
   font-weight: bold;
   border-radius: 26px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 .option-btn:hover {
-  background-color: #6395b8;
+  background: #6395b8;
+}
+.option-btn:active {
+  transform: scale(0.98);
 }
 .option-btn.active {
-  background-color: #304859;
+  background: #304859;
+  transition: all 0.3s ease;
 }
-
-.buttons[data-group="theme"] .option-btn {
-  width: 256px;
-}
-
-.buttons[data-group="players"] .option-btn {
-  width: 119px;
-}
-
-.buttons[data-group="grid"] .option-btn {
-  width: 164px;
-}
-
 .start-btn {
-  display: block;
-  width: calc(100% - 112px);
-  margin: 0 auto;
-  height: 60px;
-  background-color: #fda214;
-  color: #fcfcfc;
-  font-size: 26px;
+  width: 100%;
+  height: 70px;
+  background: #fda214;
+  color: #fff;
+  font-size: 24px;
   font-weight: bold;
-  border-radius: 30px;
+  border-radius: 35px;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 }
 .start-btn:hover {
-  background-color: #ffb84a;
+  background: #ffb84a;
+}
+.start-btn:active {
+  transform: scale(0.98);
 }
 
-/* Game Page */
-
+/* O'yin  */
+.game-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header-gme {
+  width: 100%;
+  max-width: 1100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  width: 100%;
-  background-color: #f2f2f2;
-  box-sizing: border-box;
-}
-
-.btn-res,
-.btn-new {
-  border: none;
-  border-radius: 26px;
-  font-weight: bold;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 .btn-res {
   width: 127px;
   height: 52px;
   font-size: 20px;
-  color: #fcfcfc;
-  background-color: #fda214;
+  background: #fda214;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
 .btn-res:hover {
-  background-color: #ffb84a;
+  background: #ffb84a;
 }
-
+.btn-res:active {
+  transform: scale(0.98);
+}
 .btn-new {
-  width: 149px;
   height: 52px;
   font-size: 20px;
+  background: #dfe7ec;
   color: #304859;
-  background-color: #dfe7ec;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
 }
 .btn-new:hover {
-  background-color: #6395b8;
+  background: #6395b8;
 }
+.btn-new:active {
+  transform: scale(0.98);
+}
+
+/* Grid */
 .grid {
-  width: 100%;
-  max-width: 700px;
-  margin: 40px auto 0;
   display: grid;
-  gap: 12px;
-  cursor: pointer;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 80px;
 }
-
 .grid-cell {
-  background-color: #304859;
-  width: 82px;
-  height: 82px;
-  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  background: #304859;
+  border-radius: 50%;
   cursor: pointer;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid-cell::after {
-  content: attr(data-value);
-
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   font-size: 28px;
   font-weight: bold;
-  opacity: 0;
-  visibility: hidden;
+  color: transparent;
+  transition: 0.3s;
 }
-.grid-cell.open::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 .grid-cell.open {
-  background-color: #bcced9;
+  background: #bcced9;
+  color: #fff;
+}
+.grid-cell.matched {
+  background: #fda214 !important;
+  color: #fff !important;
+  cursor: default;
+}
+.grid-cell img {
+  width: 40px;
+  display: none;
+  filter: brightness(0) invert(1);
+}
+.grid-cell.open img,
+.grid-cell.matched img {
+  display: block;
 }
 
-.grid.icons .grid-cell::after {
-  content: "";
+/* O'yinchi statistikasi  */
+.player-one-stats,
+.multi-player-stats {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  justify-content: center;
+}
+.stat-box,
+.player-card {
+  background: #dfe7ec;
+  padding: 15px 25px;
+  border-radius: 10px;
+  min-width: 180px;
+  text-align: center;
+  position: relative;
+}
+.label {
+  display: block;
+  color: #7191a5;
+  font-weight: bold;
+  font-size: 16px;
+}
+.value {
+  display: block;
+  color: #304859;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.grid.icons .grid-cell.open::before {
+.player-card.active {
+  background: #fda214;
+}
+.player-card.active .label,
+.player-card.active .value {
+  color: #fff;
+}
+.player-card.active::before {
   content: "";
-  width: 42px;
-  height: 42px;
-  background-image: var(--icon);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fda214;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 500px;
+  text-align: center;
+}
+.res-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #dfe7ec;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.res-item.winner {
+  background: #152938;
+  color: #fff;
+}
+.modal-btns {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
